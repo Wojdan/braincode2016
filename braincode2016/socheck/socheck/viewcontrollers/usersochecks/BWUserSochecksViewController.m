@@ -35,7 +35,8 @@
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.contentInset = UIEdgeInsetsMake(0.f, 0.f, 0.f, 0.f);
-
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:@"RELOADWSZYSTKO" object:nil];
     self.tableHeaderView.backgroundColor = [UIColor primaryColor];
     [self reloadData];
 }

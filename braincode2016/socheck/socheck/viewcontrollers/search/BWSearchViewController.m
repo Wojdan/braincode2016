@@ -57,10 +57,27 @@
                                                                                             NSForegroundColorAttributeName : [UIColor colorWithWhite:0.9 alpha:1],
                                                                                             NSFontAttributeName:self.searchField.font
                                                                                             }];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:@"RELOADWSZYSTKO" object:nil];
 
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #pragma mark - Table view data source
+
+- (void)reloadData {
+    if (self.searchField.text.length) {
+        [BWAPIClient searchChecklistByTag:self.searchField.text success:^(NSArray *checklists) {
+            self.results = [NSMutableArray arrayWithArray:checklists];
+            [self.tableView reloadData];
+        } failure:^(id responseObject, NSError *error) {
+            
+        }];
+    }
+}
 
 - (NSMutableArray *)results {
     if (!_results) {

@@ -114,6 +114,9 @@
     [BWAPIClient storeChecklistWithId:self.checklist.identifier success:^{
         [[[UIAlertView alloc] initWithTitle:@"Socheck saved!" message:@"The checkling should be now visible in 'Your sochecks' screen" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil] show];
         [self dismissViewControllerAnimated:YES completion:nil];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"RELOADWSZYSTKO" object:nil userInfo:nil];
+        
     } failure:^(id responseObject, NSError *error) {
         
     }];
