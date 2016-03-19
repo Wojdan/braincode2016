@@ -9,8 +9,11 @@
 #import "BWLoginViewController.h"
 #import "UIColor+BWSocheckColors.h"
 #import "BWPageViewController.h"
+#import "BWAPIClient.h"
 #import "BWRegisterViewController.h"
 #import "AppDelegate.h"
+
+NSString * const kLoginControllerAutofillNotification = @"kLoginControllerAutofillNotification";
 
 @interface BWLoginViewController ()
 
@@ -30,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleAutofillNotification:) name:kLoginControllerAutofillNotification object:nil];
     [self setup];
 }
 
@@ -41,7 +44,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
 }
 
 - (void)dealloc {
@@ -78,8 +81,8 @@
     loginUnderlineLayer.shouldRasterize = YES;
     passUnderlineLayer.shouldRasterize = YES;
     
-    self.loginTextField.textColor = [UIColor primaryColor];
-    self.passwordTextField.textColor = [UIColor primaryColor];
+    self.loginTextField.textColor = [UIColor primaryTextColor];
+    self.passwordTextField.textColor = [UIColor primaryTextColor];
     
     self.loginButton.layer.borderColor = [UIColor primaryColor].CGColor;
     self.loginButton.layer.borderWidth = 1.f;
@@ -91,6 +94,14 @@
 }
 
 #pragma mark - Actions
+
+- (void)handleAutofillNotification:(NSNotification*)note {
+    
+    self.loginTextField.text = [note.userInfo objectForKey:@"login"];
+    self.passwordTextField.text = [note.userInfo objectForKey:@"password"];
+    
+}
+
 - (void)handleKeyboardFrameChangeNotification:(NSNotification*)notification {
     
     NSDictionary* info = [notification userInfo];
@@ -117,11 +128,21 @@
 }
 
 - (IBAction)signInButtonPressed:(id)sender {
-    BWPageViewController *pageViewController = [[UIStoryboard storyboardWithName:NSStringFromClass([BWPageViewController class])
-                                                                          bundle:nil] instantiateInitialViewController];
     
-    [AppDelegate setRootViewController:pageViewController animated:YES];
-
+    if (!self.loginTextField.text.length ||
+        !self.passwordTextField.text.length) {
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Invalid credentials" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil] show];
+        return;
+    }
+    
+    [BWAPIClient authenticateUserWithUsername:self.loginTextField.text password:self.passwordTextField.text success:^{
+        BWPageViewController *pageViewController = [[UIStoryboard storyboardWithName:NSStringFromClass([BWPageViewController class])
+                                                                              bundle:nil] instantiateInitialViewController];
+        [AppDelegate setRootViewController:pageViewController animated:YES];
+    } failure:^(id responseObject, NSError *error) {
+        
+    }];
+    
 }
 
 - (IBAction)dismissKeyboard:(id)sender {

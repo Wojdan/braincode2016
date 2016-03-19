@@ -8,6 +8,9 @@
 
 #import "BWPageViewController.h"
 #import "UIColor+BWSocheckColors.h"
+#import "BWUserSochecksViewController.h"
+#import "BWSearchViewController.h"
+#import "BWCreatorViewController.h"
 
 @interface BWPageViewController () <UIScrollViewDelegate>
 
@@ -80,6 +83,8 @@
     self.leftLabel.alpha = 0;
     self.midLabel.alpha = 0;
     self.rightLabel.alpha = 0;
+    
+    self.containerScrollView.showsHorizontalScrollIndicator = NO;
 }
 
 - (void)setupControllers {
@@ -183,9 +188,6 @@
     self.rightButton.alpha = 1.f - rightAlpha;
     self.rightLabel.alpha = rightAlpha;
     
-    NSLog(@"%f", midAlpha);
-
-    
     [self.view layoutIfNeeded];
 }
 
@@ -193,9 +195,9 @@
 - (NSArray *)viewControllers {
     
     if (!_viewControllers) {
-        UIViewController *mockController1 = [UIViewController new];
-        UIViewController *mockController2 = [UIViewController new];
-        UIViewController *mockController3 = [UIViewController new];
+        UIViewController *mockController1 = [BWSearchViewController create];
+        UIViewController *mockController2 = [BWUserSochecksViewController create];
+        UIViewController *mockController3 = [BWCreatorViewController create];
         _viewControllers = @[mockController1, mockController2, mockController3];
     }
     

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BWChecklist.h"
 
 @interface BWAPIClient : NSObject
 
@@ -21,6 +22,10 @@
 + (void)registerUserWithUsername:(NSString*)username
                         password:(NSString*)password
                            email:(NSString*)email
+                         success:(void(^)())success
+                         failure:(void(^)(id responseObject, NSError *error))failure;
+
++ (void)postChecklist:(BWChecklist*)checklist
                          success:(void(^)())success
                          failure:(void(^)(id responseObject, NSError *error))failure;
 @end

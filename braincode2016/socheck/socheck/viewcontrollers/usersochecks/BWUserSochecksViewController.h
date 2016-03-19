@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BWUserSochecksViewController : UITableViewController
-
++ (instancetype)create;
 @end

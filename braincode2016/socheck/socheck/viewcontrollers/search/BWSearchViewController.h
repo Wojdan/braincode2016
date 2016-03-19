@@ -10,4 +10,6 @@
 
 @interface BWSearchViewController : UITableViewController
 
++ (instancetype)create;
+
 @end

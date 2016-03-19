@@ -8,6 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+@class BWUserSocheckCell;
+@protocol BWUserSocheckCellDelegate <NSObject>
+
+- (void)cellDidPressDeleteButton:(BWUserSocheckCell*)cell;
+
+@end
+
 @interface BWUserSocheckCell : UITableViewCell
+
+@property (weak, nonatomic) id<BWUserSocheckCellDelegate> delegate;
+
+@property (weak, nonatomic) IBOutlet UILabel *orderLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIView *separator;
+@property (weak, nonatomic) IBOutlet UILabel *progressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *checkedLabel;
 
 @end

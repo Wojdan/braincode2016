@@ -8,10 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		083D137C1F650214C1E44839 /* Pods_socheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7304A512E9017CCC8EB7A18B /* Pods_socheck.framework */; };
+		A724A5581C9D1CB300FEEABC /* BWSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A724A5571C9D1CB300FEEABC /* BWSearchViewController.m */; };
+		A724A55A1C9D1DC300FEEABC /* BWSearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A724A5591C9D1DC300FEEABC /* BWSearchViewController.storyboard */; };
+		A724A55D1C9D1FD900FEEABC /* BWSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A724A55C1C9D1FD900FEEABC /* BWSearchCell.m */; };
+		A724A5601C9D296100FEEABC /* EVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A724A55F1C9D296100FEEABC /* EVLogger.m */; };
+		A724A5661C9D47DE00FEEABC /* BWCreatorViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A724A5651C9D47DE00FEEABC /* BWCreatorViewController.storyboard */; };
+		A724A5691C9D47F600FEEABC /* BWCreatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A724A5681C9D47F600FEEABC /* BWCreatorViewController.m */; };
+		A724A56B1C9D665A00FEEABC /* BWUserSocheckCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A724A56A1C9D665A00FEEABC /* BWUserSocheckCell.xib */; };
+		A724A56E1C9D6EF100FEEABC /* BWChecklist.m in Sources */ = {isa = PBXBuildFile; fileRef = A724A56D1C9D6EF100FEEABC /* BWChecklist.m */; };
 		A77217191C9CD06C00CFB126 /* BWUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A77217181C9CD06C00CFB126 /* BWUser.m */; };
 		A772171D1C9CD53400CFB126 /* BWPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A772171C1C9CD53400CFB126 /* BWPageViewController.m */; };
 		A772171F1C9CD54300CFB126 /* BWPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A772171E1C9CD54300CFB126 /* BWPageViewController.storyboard */; };
 		A77217231C9CD97400CFB126 /* BWAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A77217221C9CD97400CFB126 /* BWAPIClient.m */; };
+		A77217271C9D0A4800CFB126 /* BWUserSochecksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77217261C9D0A4800CFB126 /* BWUserSochecksViewController.m */; };
+		A77217291C9D0A5700CFB126 /* BWUserSochecksViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A77217281C9D0A5700CFB126 /* BWUserSochecksViewController.storyboard */; };
+		A772172C1C9D0B8A00CFB126 /* BWUserSocheckCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A772172B1C9D0B8A00CFB126 /* BWUserSocheckCell.m */; };
 		A7D3D2461C9CA8020025923E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D3D2451C9CA8020025923E /* main.m */; };
 		A7D3D2491C9CA8020025923E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D3D2481C9CA8020025923E /* AppDelegate.m */; };
 		A7D3D2511C9CA8030025923E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D3D2501C9CA8030025923E /* Assets.xcassets */; };
@@ -26,6 +37,19 @@
 /* Begin PBXFileReference section */
 		713DF1884D5282CEFA1989E9 /* Pods-socheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socheck.release.xcconfig"; path = "Pods/Target Support Files/Pods-socheck/Pods-socheck.release.xcconfig"; sourceTree = "<group>"; };
 		7304A512E9017CCC8EB7A18B /* Pods_socheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A724A5561C9D1CB300FEEABC /* BWSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWSearchViewController.h; path = viewcontrollers/search/BWSearchViewController.h; sourceTree = "<group>"; };
+		A724A5571C9D1CB300FEEABC /* BWSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWSearchViewController.m; path = viewcontrollers/search/BWSearchViewController.m; sourceTree = "<group>"; };
+		A724A5591C9D1DC300FEEABC /* BWSearchViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BWSearchViewController.storyboard; path = viewcontrollers/search/BWSearchViewController.storyboard; sourceTree = "<group>"; };
+		A724A55B1C9D1FD900FEEABC /* BWSearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWSearchCell.h; path = viewcontrollers/search/BWSearchCell.h; sourceTree = "<group>"; };
+		A724A55C1C9D1FD900FEEABC /* BWSearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWSearchCell.m; path = viewcontrollers/search/BWSearchCell.m; sourceTree = "<group>"; };
+		A724A55E1C9D296100FEEABC /* EVLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVLogger.h; sourceTree = "<group>"; };
+		A724A55F1C9D296100FEEABC /* EVLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVLogger.m; sourceTree = "<group>"; };
+		A724A5651C9D47DE00FEEABC /* BWCreatorViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BWCreatorViewController.storyboard; path = viewcontrollers/creator/BWCreatorViewController.storyboard; sourceTree = "<group>"; };
+		A724A5671C9D47F600FEEABC /* BWCreatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWCreatorViewController.h; path = viewcontrollers/creator/BWCreatorViewController.h; sourceTree = "<group>"; };
+		A724A5681C9D47F600FEEABC /* BWCreatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWCreatorViewController.m; path = viewcontrollers/creator/BWCreatorViewController.m; sourceTree = "<group>"; };
+		A724A56A1C9D665A00FEEABC /* BWUserSocheckCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BWUserSocheckCell.xib; path = viewcontrollers/usersochecks/BWUserSocheckCell.xib; sourceTree = "<group>"; };
+		A724A56C1C9D6EF100FEEABC /* BWChecklist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWChecklist.h; path = models/BWChecklist.h; sourceTree = "<group>"; };
+		A724A56D1C9D6EF100FEEABC /* BWChecklist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWChecklist.m; path = models/BWChecklist.m; sourceTree = "<group>"; };
 		A77217171C9CD06C00CFB126 /* BWUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWUser.h; path = models/BWUser.h; sourceTree = "<group>"; };
 		A77217181C9CD06C00CFB126 /* BWUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWUser.m; path = models/BWUser.m; sourceTree = "<group>"; };
 		A772171B1C9CD53400CFB126 /* BWPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWPageViewController.h; path = viewcontrollers/pageview/BWPageViewController.h; sourceTree = "<group>"; };
@@ -33,6 +57,11 @@
 		A772171E1C9CD54300CFB126 /* BWPageViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BWPageViewController.storyboard; path = viewcontrollers/pageview/BWPageViewController.storyboard; sourceTree = "<group>"; };
 		A77217211C9CD97400CFB126 /* BWAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWAPIClient.h; path = api/BWAPIClient.h; sourceTree = "<group>"; };
 		A77217221C9CD97400CFB126 /* BWAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWAPIClient.m; path = api/BWAPIClient.m; sourceTree = "<group>"; };
+		A77217251C9D0A4800CFB126 /* BWUserSochecksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWUserSochecksViewController.h; path = viewcontrollers/usersochecks/BWUserSochecksViewController.h; sourceTree = "<group>"; };
+		A77217261C9D0A4800CFB126 /* BWUserSochecksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWUserSochecksViewController.m; path = viewcontrollers/usersochecks/BWUserSochecksViewController.m; sourceTree = "<group>"; };
+		A77217281C9D0A5700CFB126 /* BWUserSochecksViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BWUserSochecksViewController.storyboard; path = viewcontrollers/usersochecks/BWUserSochecksViewController.storyboard; sourceTree = "<group>"; };
+		A772172A1C9D0B8A00CFB126 /* BWUserSocheckCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWUserSocheckCell.h; path = viewcontrollers/usersochecks/BWUserSocheckCell.h; sourceTree = "<group>"; };
+		A772172B1C9D0B8A00CFB126 /* BWUserSocheckCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWUserSocheckCell.m; path = viewcontrollers/usersochecks/BWUserSocheckCell.m; sourceTree = "<group>"; };
 		A7D3D2411C9CA8020025923E /* socheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = socheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D3D2451C9CA8020025923E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A7D3D2471C9CA8020025923E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,11 +109,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A724A5551C9D1C8300FEEABC /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A724A5561C9D1CB300FEEABC /* BWSearchViewController.h */,
+				A724A5571C9D1CB300FEEABC /* BWSearchViewController.m */,
+				A724A5591C9D1DC300FEEABC /* BWSearchViewController.storyboard */,
+				A724A55B1C9D1FD900FEEABC /* BWSearchCell.h */,
+				A724A55C1C9D1FD900FEEABC /* BWSearchCell.m */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		A724A5611C9D479C00FEEABC /* Creator */ = {
+			isa = PBXGroup;
+			children = (
+				A724A5671C9D47F600FEEABC /* BWCreatorViewController.h */,
+				A724A5681C9D47F600FEEABC /* BWCreatorViewController.m */,
+				A724A5651C9D47DE00FEEABC /* BWCreatorViewController.storyboard */,
+			);
+			name = Creator;
+			sourceTree = "<group>";
+		};
 		A77217161C9CD05400CFB126 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				A77217171C9CD06C00CFB126 /* BWUser.h */,
 				A77217181C9CD06C00CFB126 /* BWUser.m */,
+				A724A56C1C9D6EF100FEEABC /* BWChecklist.h */,
+				A724A56D1C9D6EF100FEEABC /* BWChecklist.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -108,6 +161,19 @@
 			name = API;
 			sourceTree = "<group>";
 		};
+		A77217241C9D09E400CFB126 /* UserSochecks */ = {
+			isa = PBXGroup;
+			children = (
+				A77217251C9D0A4800CFB126 /* BWUserSochecksViewController.h */,
+				A77217261C9D0A4800CFB126 /* BWUserSochecksViewController.m */,
+				A77217281C9D0A5700CFB126 /* BWUserSochecksViewController.storyboard */,
+				A772172A1C9D0B8A00CFB126 /* BWUserSocheckCell.h */,
+				A772172B1C9D0B8A00CFB126 /* BWUserSocheckCell.m */,
+				A724A56A1C9D665A00FEEABC /* BWUserSocheckCell.xib */,
+			);
+			name = UserSochecks;
+			sourceTree = "<group>";
+		};
 		A7D3D2381C9CA8020025923E = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +195,8 @@
 		A7D3D2431C9CA8020025923E /* socheck */ = {
 			isa = PBXGroup;
 			children = (
+				A724A55E1C9D296100FEEABC /* EVLogger.h */,
+				A724A55F1C9D296100FEEABC /* EVLogger.m */,
 				A7D3D2471C9CA8020025923E /* AppDelegate.h */,
 				A7D3D2481C9CA8020025923E /* AppDelegate.m */,
 				A77217201C9CD95700CFB126 /* API */,
@@ -173,6 +241,9 @@
 		A7D3D2651C9CC2D40025923E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A724A5611C9D479C00FEEABC /* Creator */,
+				A724A5551C9D1C8300FEEABC /* Search */,
+				A77217241C9D09E400CFB126 /* UserSochecks */,
 				A772171A1C9CD51500CFB126 /* PageView */,
 				A7D3D2661C9CC2E10025923E /* Register */,
 				A7D3D25B1C9CA9050025923E /* Login */,
@@ -228,7 +299,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A7D3D23C1C9CA8020025923E /* Build configuration list for PBXProject "socheck" */;
+			buildConfigurationList = A7D3D23C1C9CA8020025923E /* Build configuration list for PBXProject "Socheck" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -251,10 +322,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A724A56B1C9D665A00FEEABC /* BWUserSocheckCell.xib in Resources */,
 				A7D3D2541C9CA8030025923E /* LaunchScreen.storyboard in Resources */,
 				A7D3D2601C9CA9370025923E /* BWLoginViewController.storyboard in Resources */,
+				A724A55A1C9D1DC300FEEABC /* BWSearchViewController.storyboard in Resources */,
 				A7D3D2511C9CA8030025923E /* Assets.xcassets in Resources */,
 				A7D3D26B1C9CC3110025923E /* BWRegisterViewController.storyboard in Resources */,
+				A724A5661C9D47DE00FEEABC /* BWCreatorViewController.storyboard in Resources */,
+				A77217291C9D0A5700CFB126 /* BWUserSochecksViewController.storyboard in Resources */,
 				A772171F1C9CD54300CFB126 /* BWPageViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,12 +389,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A724A5581C9D1CB300FEEABC /* BWSearchViewController.m in Sources */,
 				A7D3D2491C9CA8020025923E /* AppDelegate.m in Sources */,
+				A724A56E1C9D6EF100FEEABC /* BWChecklist.m in Sources */,
 				A772171D1C9CD53400CFB126 /* BWPageViewController.m in Sources */,
 				A77217231C9CD97400CFB126 /* BWAPIClient.m in Sources */,
 				A77217191C9CD06C00CFB126 /* BWUser.m in Sources */,
+				A724A5691C9D47F600FEEABC /* BWCreatorViewController.m in Sources */,
+				A724A5601C9D296100FEEABC /* EVLogger.m in Sources */,
+				A772172C1C9D0B8A00CFB126 /* BWUserSocheckCell.m in Sources */,
 				A7D3D2461C9CA8020025923E /* main.m in Sources */,
 				A7D3D25E1C9CA9290025923E /* BWLoginViewController.m in Sources */,
+				A724A55D1C9D1FD900FEEABC /* BWSearchCell.m in Sources */,
+				A77217271C9D0A4800CFB126 /* BWUserSochecksViewController.m in Sources */,
 				A7D3D2641C9CAEF90025923E /* UIColor+BWSocheckColors.m in Sources */,
 				A7D3D2691C9CC2F80025923E /* BWRegisterViewController.m in Sources */,
 			);
@@ -446,7 +528,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A7D3D23C1C9CA8020025923E /* Build configuration list for PBXProject "socheck" */ = {
+		A7D3D23C1C9CA8020025923E /* Build configuration list for PBXProject "Socheck" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7D3D2561C9CA8030025923E /* Debug */,

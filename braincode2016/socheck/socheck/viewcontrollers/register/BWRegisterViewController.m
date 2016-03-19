@@ -8,6 +8,8 @@
 
 #import "BWRegisterViewController.h"
 #import "UIColor+BWSocheckColors.h"
+#import "BWAPIClient.h"
+#import "BWLoginViewController.h"
 
 @interface BWRegisterViewController ()
 
@@ -98,6 +100,33 @@
         self.loginViewTop.constant = diff > 0 ? -130 : 0.f;
         [self.view layoutIfNeeded];
     }];
+}
+
+- (IBAction)registerButtonPressed:(id)sender {
+    
+    if (!self.loginTextField.text.length ||
+        !self.emailTextField.text.length ||
+        !self.passwordTextField.text.length ||
+        ![self.passwordTextField.text isEqualToString:self.repasswordTextField.text]) {
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Invalid credentials" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil] show];
+        return;
+    }
+    
+    
+    [BWAPIClient registerUserWithUsername:self.loginTextField.text password:self.passwordTextField.text email:self.emailTextField.text success:^{
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:kLoginControllerAutofillNotification
+                                                            object:nil
+                                                          userInfo:@{
+                                                                     @"login" : self.loginTextField.text,
+                                                                     @"password" : self.passwordTextField.text,
+                                                                     }];
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
+    } failure:^(id responseObject, NSError *error) {
+        
+    }];
+    
 }
 
 - (IBAction)cancelButtonPressed:(id)sender {

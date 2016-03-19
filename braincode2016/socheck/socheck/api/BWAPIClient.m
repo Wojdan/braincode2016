@@ -7,6 +7,8 @@
 //
 
 #import "BWAPIClient.h"
+#import "Mantle.h"
+#import "EVLogger.h"
 
 @interface BWAPIClient () <NSURLSessionDelegate>
 
@@ -15,7 +17,7 @@
 
 @end
 
-#define kAPIHost @""
+#define kAPIHost @"http://54.93.79.160/socheck/api/"
 #define kAccessTokenDeafultsKey @"kAccessTokenDeafultsKey"
 
 @implementation BWAPIClient
@@ -72,10 +74,24 @@
     NSMutableURLRequest *mutableRequest = [request mutableCopy];
     mutableRequest.cachePolicy = NSURLRequestReloadIgnoringCacheData;
     
+    if (apiClient.accessToken.length) {
+        [mutableRequest setValue:apiClient.accessToken forHTTPHeaderField:@"AccessToken"];
+    }
+    
     NSURLSessionDataTask *dataTask = [apiClient.session dataTaskWithRequest:mutableRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
+        __unused NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data ? data : [NSData data] options:0 error:nil];
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
         
+        [EVLogger logRequest:request response:httpResponse];
         
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (!error && completion) {
+                completion(json, NO);
+            } else if (error && failure) {
+                failure(json, error);
+            }
+        });
     }];
     
     [dataTask resume];
@@ -89,16 +105,58 @@
                              failure:(void(^)(id responseObject, NSError *error))failure {
     
     NSDictionary *parameters = @{
-                                 @"username" : username,
+                                 @"login" : username,
                                  @"password" : password
                                  };
     
     NSData *httpBody = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[BWAPIClient apiURLWithRelativePath:@"api/auth/"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[BWAPIClient apiURLWithRelativePath:@"auth/"]];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:httpBody];
+    
+    void (^successBlock)(id, BOOL) = ^(id responseObject, BOOL responseFromCache) {
+        
+        NSDictionary *json = (NSDictionary*)responseObject;
+        [BWAPIClient setAccessToken:[json objectForKey:@"token"]];
+        if (success) {
+            success();
+        }
+    };
+    
+    void (^errorBlock)(id, NSError*) = ^(id responseObject, NSError *error) {
+        if (failure) {
+            failure(responseObject, error);
+        }
+    };
+        
+    [BWAPIClient runDataTaskWithRequest:request
+                     allowCacheResponse:NO
+                             completion:successBlock
+                                failure:errorBlock];
+    
+}
+
++ (void)registerUserWithUsername:(NSString*)username
+                        password:(NSString*)password
+                           email:(NSString*)email
+                         success:(void(^)())success
+                         failure:(void(^)(id responseObject, NSError *error))failure {
+
+    NSDictionary *parameters = @{
+                                 @"email" : email,
+                                 @"login" : username,
+                                 @"password" : password
+                                 };
+    
+    NSData *httpBody = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
+
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[BWAPIClient apiURLWithRelativePath:@"user/"]];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:httpBody];
+    
     
     void (^successBlock)(id, BOOL) = ^(id responseObject, BOOL responseFromCache) {
         if (success) {
@@ -116,27 +174,22 @@
                      allowCacheResponse:NO
                              completion:successBlock
                                 failure:errorBlock];
-    
 }
 
-+ (void)registerUserWithUsername:(NSString*)username
-                        password:(NSString*)password
-                           email:(NSString*)email
-                         success:(void(^)())success
-                         failure:(void(^)(id responseObject, NSError *error))failure {
 
-    NSDictionary *parameters = @{
-                                 @"email" : email,
-                                 @"username" : username,
-                                 @"password" : password
-                                 };
++ (void)postChecklist:(BWChecklist*)checklist
+              success:(void(^)())success
+              failure:(void(^)(id responseObject, NSError *error))failure {
+    
+    NSDictionary *parameters = [MTLJSONAdapter JSONDictionaryFromModel:checklist error:nil];
     
     NSData *httpBody = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
-
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[BWAPIClient apiURLWithRelativePath:@"api/user/"]];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[BWAPIClient apiURLWithRelativePath:@"checklist/"]];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:httpBody];
+    
     
     void (^successBlock)(id, BOOL) = ^(id responseObject, BOOL responseFromCache) {
         if (success) {

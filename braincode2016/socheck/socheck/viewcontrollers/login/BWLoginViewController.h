@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString * const kLoginControllerAutofillNotification;
+
 @interface BWLoginViewController : UIViewController
 
 @end

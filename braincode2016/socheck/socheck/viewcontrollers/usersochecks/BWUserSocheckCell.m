@@ -7,11 +7,34 @@
 //
 
 #import "BWUserSocheckCell.h"
+#import "UIColor+BWSocheckColors.h"
+
+@interface BWUserSocheckCell()
+
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *separatorHeight;
+@property (weak, nonatomic) IBOutlet UIView *progressView;
+
+@end
 
 @implementation BWUserSocheckCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.contentView.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = [UIColor clearColor];
+    self.containerView.layer.masksToBounds = YES;
+    
+    self.orderLabel.textColor = [UIColor secondaryTextColor];
+    self.orderLabel.layer.borderColor = [UIColor secondaryTextColor].CGColor;
+    self.orderLabel.layer.borderWidth = 1.f;
+    self.orderLabel.layer.cornerRadius = 8.f;
+    
+    self.nameLabel.textColor = [UIColor primaryTextColor];
+    self.separatorHeight.constant = 1.f / [UIScreen mainScreen].scale;
+    self.separator.backgroundColor = [UIColor colorWithWhite:0.75 alpha:1.f];
+    self.progressView.backgroundColor = [UIColor primaryColor];
+    self.progressLabel.textColor = [UIColor primaryColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -20,4 +43,7 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)deleteBUttonPressed:(id)sender {
+    [self.delegate cellDidPressDeleteButton:self];
+}
 @end

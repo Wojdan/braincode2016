@@ -10,4 +10,13 @@
 
 @implementation BWChecklist
 
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             NSStringFromSelector(@selector(title)) : @"title",
+             NSStringFromSelector(@selector(about)) : @"description",
+             NSStringFromSelector(@selector(tags))  : @"tags",
+             NSStringFromSelector(@selector(items)) : @"items"
+             };
+}
+
 @end

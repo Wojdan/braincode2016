@@ -8,10 +8,24 @@
 
 #import "BWSearchCell.h"
 
+@interface BWSearchCell ()
+
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *separatorHeight;
+
+@end
+
+
 @implementation BWSearchCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.contentView.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor clearColor];
+    self.containerView.layer.masksToBounds = YES;
+    
+    self.separatorHeight.constant = 1.f / [UIScreen mainScreen].scale;
+    self.separator.backgroundColor = [UIColor colorWithWhite:0.75 alpha:1.f];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
