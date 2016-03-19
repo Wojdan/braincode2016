@@ -14,7 +14,6 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     return YES;
@@ -41,5 +40,29 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
++ (void)setRootViewController:(UIViewController*)viewController animated:(BOOL)animated {
+    
+    NSParameterAssert(viewController);
+    
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    __block UIViewController *oldRootViewController = appDelegate.window.rootViewController;
+    viewController.view.frame = oldRootViewController.view.bounds;
+    if (animated) {
+        appDelegate.window.userInteractionEnabled = NO;
+        [UIView transitionWithView:appDelegate.window duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve
+                        animations:^{
+                            appDelegate.window.rootViewController = viewController;
+                        } completion:^(BOOL finished) {
+                            appDelegate.window.userInteractionEnabled = YES;
+                            oldRootViewController = nil;
+                        }];
+    } else {
+        appDelegate.window.rootViewController = viewController;
+        oldRootViewController = nil;
+    }
+    
+}
+
 
 @end

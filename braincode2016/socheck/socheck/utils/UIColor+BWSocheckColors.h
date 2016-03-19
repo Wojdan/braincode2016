@@ -15,4 +15,6 @@
 + (instancetype)accentColor;
 + (instancetype)primaryTextColor;
 + (instancetype)secondaryTextColor;
++ (instancetype)lightBackgroundColor;
++ (instancetype)randomColor;
 @end

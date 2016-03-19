@@ -30,4 +30,11 @@
 + (instancetype)secondaryTextColor {
     return UIColorFromRGB(0x727272);
 }
++ (instancetype)randomColor {
+    return UIColorFromRGB(arc4random() % 0x1000000);
+}
++ (instancetype)lightBackgroundColor {
+    return [UIColor colorWithWhite:.98f alpha:1.f];
+}
+
 @end

@@ -47,7 +47,7 @@
     
     [self.view layoutIfNeeded];
     
-    self.view.backgroundColor = [UIColor colorWithWhite:0.98f alpha:1.f];
+    self.view.backgroundColor = [UIColor lightBackgroundColor];
     
     self.logoBottom.constant = CGRectGetHeight([UIScreen mainScreen].bounds) * 0.25f - CGRectGetHeight(self.logoImageView.frame) * 0.5f;
     

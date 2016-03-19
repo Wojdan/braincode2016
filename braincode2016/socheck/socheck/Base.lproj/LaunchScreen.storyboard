@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="e0Y-Cs-wDF">
-                                <rect key="frame" x="99" y="242.5" width="402" height="115"/>
+                                <rect key="frame" x="99" y="212.5" width="402" height="115"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="e0Y-Cs-wDF" secondAttribute="height" multiplier="150:43" id="YVq-YI-FVJ"/>
                                 </constraints>
@@ -28,7 +28,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="e0Y-Cs-wDF" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="BOe-CD-Vb2"/>
+                            <constraint firstItem="e0Y-Cs-wDF" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-30" id="BOe-CD-Vb2"/>
                             <constraint firstItem="e0Y-Cs-wDF" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.67" id="CEW-B6-aGS"/>
                             <constraint firstItem="e0Y-Cs-wDF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qQv-Cb-gMC"/>
                         </constraints>

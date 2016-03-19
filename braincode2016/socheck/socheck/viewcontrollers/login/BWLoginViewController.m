@@ -8,7 +8,9 @@
 
 #import "BWLoginViewController.h"
 #import "UIColor+BWSocheckColors.h"
+#import "BWPageViewController.h"
 #import "BWRegisterViewController.h"
+#import "AppDelegate.h"
 
 @interface BWLoginViewController ()
 
@@ -28,9 +30,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardFrameChangeNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
     [self setup];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardFrameChangeNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)dealloc {
@@ -41,7 +52,7 @@
     
     [self.view layoutIfNeeded];
     
-    self.view.backgroundColor = [UIColor colorWithWhite:0.98f alpha:1.f];
+    self.view.backgroundColor = [UIColor lightBackgroundColor];
     
     self.logoBottom.constant = CGRectGetHeight([UIScreen mainScreen].bounds) * 0.25f - CGRectGetHeight(self.logoImageView.frame) * 0.5f;
     
@@ -103,6 +114,14 @@
                                                            bundle:nil] instantiateInitialViewController];
     [self presentViewController:registerViewController animated:YES completion:nil];
     
+}
+
+- (IBAction)signInButtonPressed:(id)sender {
+    BWPageViewController *pageViewController = [[UIStoryboard storyboardWithName:NSStringFromClass([BWPageViewController class])
+                                                                          bundle:nil] instantiateInitialViewController];
+    
+    [AppDelegate setRootViewController:pageViewController animated:YES];
+
 }
 
 - (IBAction)dismissKeyboard:(id)sender {

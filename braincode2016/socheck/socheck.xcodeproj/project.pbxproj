@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		083D137C1F650214C1E44839 /* Pods_socheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7304A512E9017CCC8EB7A18B /* Pods_socheck.framework */; };
+		A77217191C9CD06C00CFB126 /* BWUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A77217181C9CD06C00CFB126 /* BWUser.m */; };
+		A772171D1C9CD53400CFB126 /* BWPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A772171C1C9CD53400CFB126 /* BWPageViewController.m */; };
+		A772171F1C9CD54300CFB126 /* BWPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A772171E1C9CD54300CFB126 /* BWPageViewController.storyboard */; };
+		A77217231C9CD97400CFB126 /* BWAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A77217221C9CD97400CFB126 /* BWAPIClient.m */; };
 		A7D3D2461C9CA8020025923E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D3D2451C9CA8020025923E /* main.m */; };
 		A7D3D2491C9CA8020025923E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D3D2481C9CA8020025923E /* AppDelegate.m */; };
 		A7D3D2511C9CA8030025923E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D3D2501C9CA8030025923E /* Assets.xcassets */; };
@@ -19,6 +24,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		713DF1884D5282CEFA1989E9 /* Pods-socheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socheck.release.xcconfig"; path = "Pods/Target Support Files/Pods-socheck/Pods-socheck.release.xcconfig"; sourceTree = "<group>"; };
+		7304A512E9017CCC8EB7A18B /* Pods_socheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_socheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A77217171C9CD06C00CFB126 /* BWUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWUser.h; path = models/BWUser.h; sourceTree = "<group>"; };
+		A77217181C9CD06C00CFB126 /* BWUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWUser.m; path = models/BWUser.m; sourceTree = "<group>"; };
+		A772171B1C9CD53400CFB126 /* BWPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWPageViewController.h; path = viewcontrollers/pageview/BWPageViewController.h; sourceTree = "<group>"; };
+		A772171C1C9CD53400CFB126 /* BWPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWPageViewController.m; path = viewcontrollers/pageview/BWPageViewController.m; sourceTree = "<group>"; };
+		A772171E1C9CD54300CFB126 /* BWPageViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BWPageViewController.storyboard; path = viewcontrollers/pageview/BWPageViewController.storyboard; sourceTree = "<group>"; };
+		A77217211C9CD97400CFB126 /* BWAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWAPIClient.h; path = api/BWAPIClient.h; sourceTree = "<group>"; };
+		A77217221C9CD97400CFB126 /* BWAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWAPIClient.m; path = api/BWAPIClient.m; sourceTree = "<group>"; };
 		A7D3D2411C9CA8020025923E /* socheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = socheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D3D2451C9CA8020025923E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A7D3D2471C9CA8020025923E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -34,6 +48,7 @@
 		A7D3D2671C9CC2F80025923E /* BWRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWRegisterViewController.h; path = viewcontrollers/register/BWRegisterViewController.h; sourceTree = "<group>"; };
 		A7D3D2681C9CC2F80025923E /* BWRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWRegisterViewController.m; path = viewcontrollers/register/BWRegisterViewController.m; sourceTree = "<group>"; };
 		A7D3D26A1C9CC3110025923E /* BWRegisterViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BWRegisterViewController.storyboard; path = viewcontrollers/register/BWRegisterViewController.storyboard; sourceTree = "<group>"; };
+		CD2CAB4A857D79F8499A144D /* Pods-socheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socheck.debug.xcconfig"; path = "Pods/Target Support Files/Pods-socheck/Pods-socheck.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +56,65 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				083D137C1F650214C1E44839 /* Pods_socheck.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DBEF4DE3DF0EFF3EC64D672 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD2CAB4A857D79F8499A144D /* Pods-socheck.debug.xcconfig */,
+				713DF1884D5282CEFA1989E9 /* Pods-socheck.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5EC7F4C305124C1D4B86AF76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7304A512E9017CCC8EB7A18B /* Pods_socheck.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A77217161C9CD05400CFB126 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A77217171C9CD06C00CFB126 /* BWUser.h */,
+				A77217181C9CD06C00CFB126 /* BWUser.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A772171A1C9CD51500CFB126 /* PageView */ = {
+			isa = PBXGroup;
+			children = (
+				A772171B1C9CD53400CFB126 /* BWPageViewController.h */,
+				A772171C1C9CD53400CFB126 /* BWPageViewController.m */,
+				A772171E1C9CD54300CFB126 /* BWPageViewController.storyboard */,
+			);
+			name = PageView;
+			sourceTree = "<group>";
+		};
+		A77217201C9CD95700CFB126 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A77217211C9CD97400CFB126 /* BWAPIClient.h */,
+				A77217221C9CD97400CFB126 /* BWAPIClient.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		A7D3D2381C9CA8020025923E = {
 			isa = PBXGroup;
 			children = (
 				A7D3D2431C9CA8020025923E /* socheck */,
 				A7D3D2421C9CA8020025923E /* Products */,
+				1DBEF4DE3DF0EFF3EC64D672 /* Pods */,
+				5EC7F4C305124C1D4B86AF76 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +131,8 @@
 			children = (
 				A7D3D2471C9CA8020025923E /* AppDelegate.h */,
 				A7D3D2481C9CA8020025923E /* AppDelegate.m */,
+				A77217201C9CD95700CFB126 /* API */,
+				A77217161C9CD05400CFB126 /* Models */,
 				A7D3D2611C9CAEBE0025923E /* Utils */,
 				A7D3D2651C9CC2D40025923E /* ViewControllers */,
 				A7D3D2501C9CA8030025923E /* Assets.xcassets */,
@@ -108,6 +173,7 @@
 		A7D3D2651C9CC2D40025923E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A772171A1C9CD51500CFB126 /* PageView */,
 				A7D3D2661C9CC2E10025923E /* Register */,
 				A7D3D25B1C9CA9050025923E /* Login */,
 			);
@@ -131,9 +197,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7D3D2581C9CA8030025923E /* Build configuration list for PBXNativeTarget "socheck" */;
 			buildPhases = (
+				32D304AE1F36B9A96EE39A40 /* Check Pods Manifest.lock */,
 				A7D3D23D1C9CA8020025923E /* Sources */,
 				A7D3D23E1C9CA8020025923E /* Frameworks */,
 				A7D3D23F1C9CA8020025923E /* Resources */,
+				6B9007F8B63AAD2CB88D0737 /* Embed Pods Frameworks */,
+				AA7A577C39E41CEB3F2EC99F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -186,10 +255,59 @@
 				A7D3D2601C9CA9370025923E /* BWLoginViewController.storyboard in Resources */,
 				A7D3D2511C9CA8030025923E /* Assets.xcassets in Resources */,
 				A7D3D26B1C9CC3110025923E /* BWRegisterViewController.storyboard in Resources */,
+				A772171F1C9CD54300CFB126 /* BWPageViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		32D304AE1F36B9A96EE39A40 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6B9007F8B63AAD2CB88D0737 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-socheck/Pods-socheck-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA7A577C39E41CEB3F2EC99F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-socheck/Pods-socheck-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A7D3D23D1C9CA8020025923E /* Sources */ = {
@@ -197,6 +315,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7D3D2491C9CA8020025923E /* AppDelegate.m in Sources */,
+				A772171D1C9CD53400CFB126 /* BWPageViewController.m in Sources */,
+				A77217231C9CD97400CFB126 /* BWAPIClient.m in Sources */,
+				A77217191C9CD06C00CFB126 /* BWUser.m in Sources */,
 				A7D3D2461C9CA8020025923E /* main.m in Sources */,
 				A7D3D25E1C9CA9290025923E /* BWLoginViewController.m in Sources */,
 				A7D3D2641C9CAEF90025923E /* UIColor+BWSocheckColors.m in Sources */,
@@ -300,6 +421,7 @@
 		};
 		A7D3D2591C9CA8030025923E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD2CAB4A857D79F8499A144D /* Pods-socheck.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = socheck/Info.plist;
@@ -311,6 +433,7 @@
 		};
 		A7D3D25A1C9CA8030025923E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 713DF1884D5282CEFA1989E9 /* Pods-socheck.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = socheck/Info.plist;
@@ -339,6 +462,7 @@
 				A7D3D25A1C9CA8030025923E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
