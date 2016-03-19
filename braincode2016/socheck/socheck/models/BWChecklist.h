@@ -10,8 +10,11 @@
 
 @interface BWChecklist : MTLModel <MTLJSONSerializing>
 
+@property (nonatomic, strong) NSNumber *identifier;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *about;
+@property (nonatomic, strong) NSString *creator;
+@property (nonatomic, strong) NSNumber *downloadCount;
 @property (nonatomic, strong) NSArray *tags;
 @property (nonatomic, strong) NSArray *items;
 

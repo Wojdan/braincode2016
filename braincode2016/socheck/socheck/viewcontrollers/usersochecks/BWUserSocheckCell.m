@@ -35,12 +35,15 @@
     self.separator.backgroundColor = [UIColor colorWithWhite:0.75 alpha:1.f];
     self.progressView.backgroundColor = [UIColor primaryColor];
     self.progressLabel.textColor = [UIColor primaryColor];
+    
+    self.checkmarkButton.hidden = YES;
+    self.checkmarkButton.tintColor = [UIColor primaryColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+    self.checkmarkButton.hidden = !selected || !self.deleteButton.hidden;
 }
 
 - (IBAction)deleteBUttonPressed:(id)sender {

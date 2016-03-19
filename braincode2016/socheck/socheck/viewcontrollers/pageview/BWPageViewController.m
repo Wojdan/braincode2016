@@ -161,6 +161,8 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
+    [self.view endEditing:YES];
+    
     CGFloat offsetX = scrollView.contentOffset.x;
     CGFloat scrollWidth = scrollView.bounds.size.width;
     

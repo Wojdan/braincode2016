@@ -6,6 +6,8 @@
 //  Copyright © 2016 Bartłomiej Wojdan. All rights reserved.
 //
 
+@import UIKit;
+
 #import "BWAPIClient.h"
 #import "Mantle.h"
 #import "EVLogger.h"
@@ -120,6 +122,17 @@
         
         NSDictionary *json = (NSDictionary*)responseObject;
         [BWAPIClient setAccessToken:[json objectForKey:@"token"]];
+        
+        if (![BWAPIClient sharedClient].accessToken.length) {
+            
+            [[[UIAlertView alloc] initWithTitle:@"Login error" message:@"Invalid credentials" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil] show];
+            
+            if (failure) {
+                failure(responseObject, nil);
+            }
+            return;
+        }
+        
         if (success) {
             success();
         }
@@ -190,6 +203,98 @@
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:httpBody];
     
+    
+    void (^successBlock)(id, BOOL) = ^(id responseObject, BOOL responseFromCache) {
+        if (success) {
+            success();
+        }
+    };
+    
+    void (^errorBlock)(id, NSError*) = ^(id responseObject, NSError *error) {
+        if (failure) {
+            failure(responseObject, error);
+        }
+    };
+    
+    [BWAPIClient runDataTaskWithRequest:request
+                     allowCacheResponse:NO
+                             completion:successBlock
+                                failure:errorBlock];
+}
+
+
++ (void)searchChecklistByTag:(NSString*)tag
+                     success:(void(^)(NSArray *checklists))success
+                     failure:(void(^)(id responseObject, NSError *error))failure {
+    
+    NSURL *url = [NSURL URLWithString:[tag stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] relativeToURL:[BWAPIClient apiURLWithRelativePath:@"checklist/tag/"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+    [request setHTTPMethod:@"GET"];
+    
+    void (^successBlock)(id, BOOL) = ^(id responseObject, BOOL responseFromCache) {
+        
+        NSArray *results = [responseObject objectForKey:@"results"];
+        NSArray *checklists = [MTLJSONAdapter modelsOfClass:[BWChecklist class] fromJSONArray:results error:nil];
+        
+        if (success) {
+            success(checklists);
+        }
+    };
+    
+    void (^errorBlock)(id, NSError*) = ^(id responseObject, NSError *error) {
+        if (failure) {
+            failure(responseObject, error);
+        }
+    };
+    
+    [BWAPIClient runDataTaskWithRequest:request
+                     allowCacheResponse:NO
+                             completion:successBlock
+                                failure:errorBlock];
+}
+
+
++ (void)getUserWithSuccess:(void(^)(NSArray *checklists, NSString *username))success
+                   failure:(void(^)(id responseObject, NSError *error))failure {
+
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[BWAPIClient apiURLWithRelativePath:@"opt/user"]];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+    [request setValue:[BWAPIClient sharedClient].accessToken forHTTPHeaderField:@"AccessToken"];
+    [request setHTTPMethod:@"GET"];
+    
+    void (^successBlock)(id, BOOL) = ^(id responseObject, BOOL responseFromCache) {
+        
+        NSArray *results = [responseObject objectForKey:@"checklists"];
+        NSArray *checklists = [MTLJSONAdapter modelsOfClass:[BWChecklist class] fromJSONArray:results error:nil];
+        NSString *username = [responseObject objectForKey:@"username"];
+        if (success) {
+            success(checklists, username);
+        }
+    };
+    
+    void (^errorBlock)(id, NSError*) = ^(id responseObject, NSError *error) {
+        if (failure) {
+            failure(responseObject, error);
+        }
+    };
+    
+    [BWAPIClient runDataTaskWithRequest:request
+                     allowCacheResponse:NO
+                             completion:successBlock
+                                failure:errorBlock];
+}
+
+
++ (void)storeChecklistWithId:(NSNumber*)identifier
+                     success:(void(^)())success
+                     failure:(void(^)(id responseObject, NSError *error))failure {
+    
+    NSURL *url = [NSURL URLWithString:[identifier.stringValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] relativeToURL:[BWAPIClient apiURLWithRelativePath:@"checklist/"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+    [request setValue:[BWAPIClient sharedClient].accessToken forHTTPHeaderField:@"AccessToken"];
+    [request setHTTPMethod:@"GET"];
     
     void (^successBlock)(id, BOOL) = ^(id responseObject, BOOL responseFromCache) {
         if (success) {

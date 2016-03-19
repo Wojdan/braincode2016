@@ -7,6 +7,7 @@
 //
 
 #import "BWSearchCell.h"
+#import "UIColor+BWSocheckColors.h"
 
 @interface BWSearchCell ()
 
@@ -25,6 +26,7 @@
     self.containerView.layer.masksToBounds = YES;
     
     self.separatorHeight.constant = 1.f / [UIScreen mainScreen].scale;
+    self.statsLabel.textColor = [UIColor primaryColor];
     self.separator.backgroundColor = [UIColor colorWithWhite:0.75 alpha:1.f];
 }
 

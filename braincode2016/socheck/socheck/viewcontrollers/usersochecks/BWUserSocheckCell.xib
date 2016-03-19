@@ -62,16 +62,33 @@
                                     <action selector="deleteBUttonPressed:" destination="Wha-RU-3hA" eventType="touchUpInside" id="277-9H-GUo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSJ-Tf-rdq">
+                                <rect key="frame" x="552" y="20" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="AYh-Pa-hRD"/>
+                                    <constraint firstAttribute="height" constant="40" id="sxY-5j-tnq"/>
+                                </constraints>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="contentEdgeInsets" minX="4" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" title="Button" image="ic_check"/>
+                                <connections>
+                                    <action selector="deleteBUttonPressed:" destination="Wha-RU-3hA" eventType="touchUpInside" id="7rh-rL-kCj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="hSJ-Tf-rdq" firstAttribute="trailing" secondItem="zbO-tA-O7i" secondAttribute="trailing" id="11X-JY-vsH"/>
+                            <constraint firstItem="hSJ-Tf-rdq" firstAttribute="leading" secondItem="zbO-tA-O7i" secondAttribute="leading" id="4Qd-ex-OLw"/>
                             <constraint firstItem="zbO-tA-O7i" firstAttribute="centerY" secondItem="o5h-h2-Pcn" secondAttribute="centerY" id="Av7-lb-6bg"/>
+                            <constraint firstItem="hSJ-Tf-rdq" firstAttribute="bottom" secondItem="zbO-tA-O7i" secondAttribute="bottom" id="KXX-iT-tSK"/>
                             <constraint firstItem="9Y1-cW-tiB" firstAttribute="centerY" secondItem="o5h-h2-Pcn" secondAttribute="centerY" id="SD6-aG-pVY"/>
                             <constraint firstItem="R1r-jQ-3u6" firstAttribute="centerY" secondItem="o5h-h2-Pcn" secondAttribute="centerY" id="bip-kz-BGR"/>
                             <constraint firstItem="ByZ-pF-KPJ" firstAttribute="leading" secondItem="R1r-jQ-3u6" secondAttribute="leading" id="fbU-Fn-YL7"/>
                             <constraint firstAttribute="bottom" secondItem="ByZ-pF-KPJ" secondAttribute="bottom" id="gGV-i1-heV"/>
                             <constraint firstItem="zbO-tA-O7i" firstAttribute="leading" secondItem="R1r-jQ-3u6" secondAttribute="trailing" id="k9x-t3-hlF"/>
                             <constraint firstItem="9Y1-cW-tiB" firstAttribute="leading" secondItem="o5h-h2-Pcn" secondAttribute="leading" constant="8" id="kNk-uG-Nj3"/>
+                            <constraint firstItem="hSJ-Tf-rdq" firstAttribute="top" secondItem="zbO-tA-O7i" secondAttribute="top" id="kVi-Fx-PPV"/>
                             <constraint firstAttribute="trailing" secondItem="zbO-tA-O7i" secondAttribute="trailing" id="sgs-GT-fM9"/>
                             <constraint firstItem="R1r-jQ-3u6" firstAttribute="leading" secondItem="9Y1-cW-tiB" secondAttribute="trailing" constant="16" id="sxG-eU-03y"/>
                             <constraint firstAttribute="trailing" secondItem="ByZ-pF-KPJ" secondAttribute="trailing" id="wXS-bt-Mid"/>
@@ -86,7 +103,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="checkmarkButton" destination="hSJ-Tf-rdq" id="p3Z-7R-EGl"/>
                 <outlet property="containerView" destination="o5h-h2-Pcn" id="1Wx-Yq-HAa"/>
+                <outlet property="deleteButton" destination="zbO-tA-O7i" id="7aY-IK-RuI"/>
                 <outlet property="nameLabel" destination="R1r-jQ-3u6" id="haX-9F-8TU"/>
                 <outlet property="orderLabel" destination="9Y1-cW-tiB" id="6lj-Vx-SOg"/>
                 <outlet property="separator" destination="ByZ-pF-KPJ" id="jHP-IE-RMw"/>
@@ -95,6 +114,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="ic_check" width="50" height="50"/>
         <image name="ic_delete" width="20" height="20"/>
     </resources>
 </document>

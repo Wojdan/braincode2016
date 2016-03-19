@@ -28,4 +28,16 @@
 + (void)postChecklist:(BWChecklist*)checklist
                          success:(void(^)())success
                          failure:(void(^)(id responseObject, NSError *error))failure;
+
++ (void)searchChecklistByTag:(NSString*)tag
+                     success:(void(^)(NSArray *checklists))success
+                     failure:(void(^)(id responseObject, NSError *error))failure;
+
++ (void)storeChecklistWithId:(NSNumber*)identifier
+                     success:(void(^)())success
+                     failure:(void(^)(id responseObject, NSError *error))failure;
+
++ (void)getUserWithSuccess:(void(^)(NSArray *checklists, NSString *username))success
+                     failure:(void(^)(id responseObject, NSError *error))failure;
+
 @end

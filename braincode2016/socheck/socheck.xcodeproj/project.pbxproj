@@ -16,6 +16,10 @@
 		A724A5691C9D47F600FEEABC /* BWCreatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A724A5681C9D47F600FEEABC /* BWCreatorViewController.m */; };
 		A724A56B1C9D665A00FEEABC /* BWUserSocheckCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A724A56A1C9D665A00FEEABC /* BWUserSocheckCell.xib */; };
 		A724A56E1C9D6EF100FEEABC /* BWChecklist.m in Sources */ = {isa = PBXBuildFile; fileRef = A724A56D1C9D6EF100FEEABC /* BWChecklist.m */; };
+		A724A5721C9D8EE500FEEABC /* BWResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A724A5711C9D8EE500FEEABC /* BWResultViewController.m */; };
+		A724A5741C9D8EF300FEEABC /* BWResultViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A724A5731C9D8EF300FEEABC /* BWResultViewController.storyboard */; };
+		A724A5781C9D9B2300FEEABC /* BWChecklistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A724A5771C9D9B2300FEEABC /* BWChecklistViewController.m */; };
+		A724A57A1C9D9B4500FEEABC /* BWChecklistViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A724A5791C9D9B4500FEEABC /* BWChecklistViewController.storyboard */; };
 		A77217191C9CD06C00CFB126 /* BWUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A77217181C9CD06C00CFB126 /* BWUser.m */; };
 		A772171D1C9CD53400CFB126 /* BWPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A772171C1C9CD53400CFB126 /* BWPageViewController.m */; };
 		A772171F1C9CD54300CFB126 /* BWPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A772171E1C9CD54300CFB126 /* BWPageViewController.storyboard */; };
@@ -50,6 +54,12 @@
 		A724A56A1C9D665A00FEEABC /* BWUserSocheckCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BWUserSocheckCell.xib; path = viewcontrollers/usersochecks/BWUserSocheckCell.xib; sourceTree = "<group>"; };
 		A724A56C1C9D6EF100FEEABC /* BWChecklist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWChecklist.h; path = models/BWChecklist.h; sourceTree = "<group>"; };
 		A724A56D1C9D6EF100FEEABC /* BWChecklist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWChecklist.m; path = models/BWChecklist.m; sourceTree = "<group>"; };
+		A724A5701C9D8EE500FEEABC /* BWResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWResultViewController.h; path = viewcontrollers/result/BWResultViewController.h; sourceTree = "<group>"; };
+		A724A5711C9D8EE500FEEABC /* BWResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWResultViewController.m; path = viewcontrollers/result/BWResultViewController.m; sourceTree = "<group>"; };
+		A724A5731C9D8EF300FEEABC /* BWResultViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BWResultViewController.storyboard; path = viewcontrollers/result/BWResultViewController.storyboard; sourceTree = "<group>"; };
+		A724A5761C9D9B2300FEEABC /* BWChecklistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWChecklistViewController.h; path = viewcontrollers/checklist/BWChecklistViewController.h; sourceTree = "<group>"; };
+		A724A5771C9D9B2300FEEABC /* BWChecklistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWChecklistViewController.m; path = viewcontrollers/checklist/BWChecklistViewController.m; sourceTree = "<group>"; };
+		A724A5791C9D9B4500FEEABC /* BWChecklistViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BWChecklistViewController.storyboard; path = viewcontrollers/checklist/BWChecklistViewController.storyboard; sourceTree = "<group>"; };
 		A77217171C9CD06C00CFB126 /* BWUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWUser.h; path = models/BWUser.h; sourceTree = "<group>"; };
 		A77217181C9CD06C00CFB126 /* BWUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWUser.m; path = models/BWUser.m; sourceTree = "<group>"; };
 		A772171B1C9CD53400CFB126 /* BWPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWPageViewController.h; path = viewcontrollers/pageview/BWPageViewController.h; sourceTree = "<group>"; };
@@ -129,6 +139,26 @@
 				A724A5651C9D47DE00FEEABC /* BWCreatorViewController.storyboard */,
 			);
 			name = Creator;
+			sourceTree = "<group>";
+		};
+		A724A56F1C9D8EA300FEEABC /* SearchResult */ = {
+			isa = PBXGroup;
+			children = (
+				A724A5701C9D8EE500FEEABC /* BWResultViewController.h */,
+				A724A5711C9D8EE500FEEABC /* BWResultViewController.m */,
+				A724A5731C9D8EF300FEEABC /* BWResultViewController.storyboard */,
+			);
+			name = SearchResult;
+			sourceTree = "<group>";
+		};
+		A724A5751C9D9B0A00FEEABC /* Checklist */ = {
+			isa = PBXGroup;
+			children = (
+				A724A5761C9D9B2300FEEABC /* BWChecklistViewController.h */,
+				A724A5771C9D9B2300FEEABC /* BWChecklistViewController.m */,
+				A724A5791C9D9B4500FEEABC /* BWChecklistViewController.storyboard */,
+			);
+			name = Checklist;
 			sourceTree = "<group>";
 		};
 		A77217161C9CD05400CFB126 /* Models */ = {
@@ -241,6 +271,8 @@
 		A7D3D2651C9CC2D40025923E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A724A5751C9D9B0A00FEEABC /* Checklist */,
+				A724A56F1C9D8EA300FEEABC /* SearchResult */,
 				A724A5611C9D479C00FEEABC /* Creator */,
 				A724A5551C9D1C8300FEEABC /* Search */,
 				A77217241C9D09E400CFB126 /* UserSochecks */,
@@ -322,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A724A57A1C9D9B4500FEEABC /* BWChecklistViewController.storyboard in Resources */,
 				A724A56B1C9D665A00FEEABC /* BWUserSocheckCell.xib in Resources */,
 				A7D3D2541C9CA8030025923E /* LaunchScreen.storyboard in Resources */,
 				A7D3D2601C9CA9370025923E /* BWLoginViewController.storyboard in Resources */,
@@ -331,6 +364,7 @@
 				A724A5661C9D47DE00FEEABC /* BWCreatorViewController.storyboard in Resources */,
 				A77217291C9D0A5700CFB126 /* BWUserSochecksViewController.storyboard in Resources */,
 				A772171F1C9CD54300CFB126 /* BWPageViewController.storyboard in Resources */,
+				A724A5741C9D8EF300FEEABC /* BWResultViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,8 +431,10 @@
 				A77217191C9CD06C00CFB126 /* BWUser.m in Sources */,
 				A724A5691C9D47F600FEEABC /* BWCreatorViewController.m in Sources */,
 				A724A5601C9D296100FEEABC /* EVLogger.m in Sources */,
+				A724A5781C9D9B2300FEEABC /* BWChecklistViewController.m in Sources */,
 				A772172C1C9D0B8A00CFB126 /* BWUserSocheckCell.m in Sources */,
 				A7D3D2461C9CA8020025923E /* main.m in Sources */,
+				A724A5721C9D8EE500FEEABC /* BWResultViewController.m in Sources */,
 				A7D3D25E1C9CA9290025923E /* BWLoginViewController.m in Sources */,
 				A724A55D1C9D1FD900FEEABC /* BWSearchCell.m in Sources */,
 				A77217271C9D0A4800CFB126 /* BWUserSochecksViewController.m in Sources */,
